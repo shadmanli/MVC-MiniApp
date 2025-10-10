@@ -6,6 +6,7 @@ namespace MVC_MiniApp.ViewModels.Work
     {
         [Required]
         public string Description { get; set; }
+        [Required]
         public string Name { get; set; }
         [Required]
         public List<IFormFile> Images { get; set; }

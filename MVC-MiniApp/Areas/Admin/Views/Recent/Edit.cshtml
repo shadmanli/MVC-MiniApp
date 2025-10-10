@@ -1,8 +1,11 @@
 ﻿@model RecentEditVM
+
 <main>
     <div class="container" style="margin-top:160px;margin-left:320px; width:500px">
         <form class="row g-3" asp-action="Edit" method="post" enctype="multipart/form-data">
 
+            <!-- GİZLİ ID SAHƏSİ -->
+            <input type="hidden" asp-for="Id" />
 
             <div class="col-12">
                 <label for="Title" class="form-label">Title</label>
@@ -16,10 +19,9 @@
                 <span class="text-danger" asp-validation-for="Description"></span>
             </div>
 
-
             <div class="mb-3">
                 <label asp-for="UploadImage" class="form-label">Upload New Images:</label>
-                <input asp-for="UploadImage" type="file" multiple accept="image/*" class="form-control" />
+                <input asp-for="UploadImage" type="file" accept="image/*" class="form-control" />
                 <span asp-validation-for="UploadImage" class="text-danger"></span>
             </div>
 
@@ -31,4 +33,3 @@
         </form>
     </div>
 </main>
-

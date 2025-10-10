@@ -1,0 +1,29 @@
+﻿
+@model AboutCreateVM
+
+<div class="container mt-5">
+    <form method="post" asp-action="Create" enctype="multipart/form-data" class="form-sample mt-5">
+
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span class="text-danger" asp-validation-for="Description"></span>
+        </div>
+
+
+
+
+        <div class="mb-3">
+            <label asp-for="Image" class="form-label"></label>
+            <input asp-for="Image" type="file" class="form-control" />
+            <span class="text-danger" asp-validation-for="Image"></span>
+        </div>
+      
+
+
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a asp-action="Index" class="btn btn-warning">Cancel</a>
+    </form>
+</div>
+

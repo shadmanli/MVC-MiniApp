@@ -61,7 +61,7 @@ namespace MVC_MiniApp.Services
         }
 
 
-        public async Task UpdateAsync(Recent dbRecent, RecentEditVM request)
+        public async Task EditAsync(Recent dbRecent, RecentEditVM request)
         {
             if (request.UploadImage != null)
             {

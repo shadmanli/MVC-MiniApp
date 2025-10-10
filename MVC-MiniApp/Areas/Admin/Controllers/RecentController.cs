@@ -47,13 +47,14 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             {
                 Title = recent.Title,
                 Description = recent.Description,
-                ExistImage = recent.Image
+                ExistImage = recent.Image,
+                Id = recent.Id,
             };
 
             return View(editModel);
         }
 
-       
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, RecentEditVM request)
@@ -64,11 +65,11 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             var dbRecent = await _recentService.GetByIdAsync(id);
             if (dbRecent == null) return NotFound();
 
-            
-            await _recentService.UpdateAsync(dbRecent, request);
+            await _recentService.EditAsync(dbRecent, request);
 
             return RedirectToAction(nameof(Index));
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
