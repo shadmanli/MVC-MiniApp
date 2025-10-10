@@ -1,0 +1,35 @@
+﻿@model WorkCreateVM
+<div class="container mt-5">
+    <form method="post" asp-action="Create" enctype="multipart/form-data" class="form-sample mt-5">
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name:</label>
+            <input asp-for="Name" class="form-control" />
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Descrition:</label>
+            <input asp-for="Description" class="form-control" />
+            <span class="text-danger" asp-validation-for="Description"></span>
+        </div>
+
+       
+
+        <div class="mb-3">
+            <label asp-for="CategoryId" class="form-label">Kateqoriya:</label>
+            <select asp-for="CategoryId" class="form-select" asp-items="@ViewBag.Categories">
+                <option disabled selected>Seçin</option>
+            </select>
+            <span class="text-danger" asp-validation-for="CategoryId"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Images" class="form-label">Images:</label>
+            <input asp-for="Images" type="file" multiple accept="image/*" class="form-control" />
+            <span asp-validation-for="Images" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a asp-action="Index" class="btn btn-warning">Cancel</a>
+    </form>
+</div>

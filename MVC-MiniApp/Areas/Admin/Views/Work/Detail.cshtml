@@ -1,0 +1,24 @@
+﻿@model WorkDetailVM
+
+<div class="container">
+    <h1 class="text-center">Product Detail</h1>
+
+    <div class="product-item detail mt-4">
+
+        <h4>Name : @Model.Name</h4>
+        <h4> Description : @Model.Description</h4>
+        <h4>Category : @Model.CategoryName</h4>
+
+        <div class="Image mt-3">
+            @foreach (var item in Model.Images)
+            {
+                <img class="@(item.IsMain ? "border border-success border-3" : "")"
+                     src="~/img/@item.Image"
+                     style="width:150px; height:150px;" />
+            }
+        </div>
+    </div>
+
+    <a asp-action="Index" class="btn btn-secondary mt-3">Back to Index</a>
+</div>
+

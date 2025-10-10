@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\asp.net core\\MVC-MiniApp\\MVC-MiniApp\\MVC-MiniApp.csproj": {}
+    "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\MVC-MiniApp.csproj": {}
   },
   "projects": {
-    "D:\\asp.net core\\MVC-MiniApp\\MVC-MiniApp\\MVC-MiniApp.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\MVC-MiniApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\asp.net core\\MVC-MiniApp\\MVC-MiniApp\\MVC-MiniApp.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\MVC-MiniApp.csproj",
         "projectName": "MVC-MiniApp",
-        "projectPath": "D:\\asp.net core\\MVC-MiniApp\\MVC-MiniApp\\MVC-MiniApp.csproj",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\MVC-MiniApp.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\asp.net core\\MVC-MiniApp\\MVC-MiniApp\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,6 +69,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.20, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             }
           },
           "imports": [

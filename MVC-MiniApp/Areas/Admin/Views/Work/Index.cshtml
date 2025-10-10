@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WorkVM>
+
+<div class="container mt-5">
+    <h2 class="mt-5">Work</h2>
+    <a asp-action="Create" class="btn btn-secondary">Create</a>
+
+    <form id="anti-forgery-form">
+        @Html.AntiForgeryToken()
+    </form>
+
+    <table class="table table-striped table-bordered table-hover mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr id="row-@item.Id">
+                    <td><img src="~/img/@item.MainImage" style="width:150px;height:150px" /></td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td class="text-success">@item.CategoryName</td>
+                    <td>
+                        <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-dark">Detail</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                        <button data-id="@item.Id" class="btn btn-danger delete-work-btn">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const token = document.querySelector('#anti-forgery-form input[name="__RequestVerificationToken"]').value;
+
+            document.querySelectorAll(".delete-work-btn").forEach(btn => {
+                btn.addEventListener("click", async () => {
+                    const id = btn.getAttribute("data-id");
+
+                    try {
+                        const response = await fetch(`/Admin/Work/Delete/${id}`, {
+                            method: "POST",
+                            headers: {
+                                "RequestVerificationToken": token
+                            }
+                        });
+
+                        if (response.ok) {
+                            const row = document.getElementById(`row-${id}`);
+                            if(row) row.remove(); // DOM-dan sil
+                        }
+                    } catch (error) {
+                        console.error(error);
+                    }
+                });
+            });
+        });
+    </script>
+
