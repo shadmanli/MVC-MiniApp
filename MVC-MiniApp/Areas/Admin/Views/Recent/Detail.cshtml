@@ -1,0 +1,19 @@
+﻿@model RecentVM
+
+<div class="container mt-5 pt-5">
+    <h3>Expert Detail</h3>
+
+    <div class="mt-3">
+
+        <img src="/img/@Model.Image" style="width:150px;height:150px; object-fit:cover;" alt="@Model.Title" />
+    </div>
+
+    <div class="mt-3">
+        <p><strong>Title:</strong> @Model.Title</p>
+        <p><strong>Description:</strong> @Model.Description</p>
+    </div>
+
+    <a asp-action="Index" class="btn btn-secondary mt-3">Back to Index</a>
+</div>
+
+
