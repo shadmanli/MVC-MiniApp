@@ -146,5 +146,39 @@ namespace MVC_MiniApp.Services
             _context.Works.Remove(work);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<WorkUIVM>> GetAllUIAsync()
+        {
+            var works = await _context.Works
+               .Include(w => w.Category)
+               .Include(w => w.Images)
+               .ToListAsync();
+
+            return works.Select(w => new WorkUIVM
+            {
+                Id = w.Id,
+                CategoryId = w.CategoryId,
+                Description = w.Description,
+                CategoryName = w.Category.Name,
+                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image
+            });
+        }
+
+        public async Task<IEnumerable<WorkUIVM>> GetAllRecentWorksUIAsync()
+        {
+            var works = await _context.Works
+              .Include(w => w.Category)
+              .Include(w => w.Images)
+              .ToListAsync();
+
+            return works.Select(w => new WorkUIVM
+            {
+                Id = w.Id,
+                CategoryId = w.CategoryId,
+                Description = w.Description,
+                CategoryName = w.Category.Name,
+                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image
+            }).OrderByDescending(m=>m.Id).Take(6);
+        }
     }
 }

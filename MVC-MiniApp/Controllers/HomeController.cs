@@ -10,7 +10,6 @@ namespace MVC_MiniApp.Controllers
         {
             return View();
         }
-
     
     }
 }

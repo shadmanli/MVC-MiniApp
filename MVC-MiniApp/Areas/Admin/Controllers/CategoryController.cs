@@ -45,7 +45,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult>Detail(int id)
+        public async Task<IActionResult> Detail(int id)
         {
             var category = await _categoryService.GetByIdAsync(id);
             if(category == null)  return NotFound();

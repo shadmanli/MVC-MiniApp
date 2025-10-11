@@ -146,8 +146,8 @@ D:\asp.net core\MVC-MiniApp\MVC-MiniApp\obj\Debug\net8.0\MVC-MiniApp.csproj.Asse
 D:\asp.net core\MVC-MiniApp\MVC-MiniApp\obj\Debug\net8.0\MVC-Mini.1072C263.Up2Date
 C:\Users\ASUS\Desktop\MVC-MiniApp\MVC-MiniApp\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\ASUS\Desktop\MVC-MiniApp\MVC-MiniApp\bin\Debug\net8.0\appsettings.json
-C:\Users\ASUS\Desktop\MVC-MiniApp\MVC-MiniApp\bin\Debug\net8.0\MVC-MiniApp.staticwebassets.endpoints.json
 C:\Users\ASUS\Desktop\MVC-MiniApp\MVC-MiniApp\bin\Debug\net8.0\MVC-MiniApp.staticwebassets.runtime.json
+C:\Users\ASUS\Desktop\MVC-MiniApp\MVC-MiniApp\bin\Debug\net8.0\MVC-MiniApp.staticwebassets.endpoints.json
 C:\Users\ASUS\Desktop\MVC-MiniApp\MVC-MiniApp\bin\Debug\net8.0\MVC-MiniApp.exe
 C:\Users\ASUS\Desktop\MVC-MiniApp\MVC-MiniApp\bin\Debug\net8.0\MVC-MiniApp.deps.json
 C:\Users\ASUS\Desktop\MVC-MiniApp\MVC-MiniApp\bin\Debug\net8.0\MVC-MiniApp.runtimeconfig.json

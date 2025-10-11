@@ -1,9 +1,8 @@
 ﻿@model CategoryEditVM
 
-<div class="container mt-5">
+<div class="container center-container">
     <form method="post" asp-action="Edit" class="form-sample mt-5">
-        <div class="form-group">
-
+        <div class="form-group mb-3">
             <label>Name:</label>
             <input asp-for="Name" class="form-control" maxlength="none" />
             <span class="text-danger" asp-validation-for="Name"></span>

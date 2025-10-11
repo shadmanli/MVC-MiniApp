@@ -5,11 +5,11 @@ namespace MVC_MiniApp.Services.Interfaces
 {
     public interface IAboutService
     {
-        Task<IEnumerable<AboutVM>>GetAllAsync();
-
+        Task<AboutVM> GetAboutAsync(); 
         Task<About> GetByIdAsync(int id);
         Task CreateAsync(AboutCreateVM request);
         Task EditAsync(About dbAbout, AboutEditVM request);
         Task DeleteAsync(About about);
     }
+
 }

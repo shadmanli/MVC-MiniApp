@@ -30,9 +30,9 @@ namespace MVC_MiniApp.Services
             await _context.SaveChangesAsync();
         }
 
-        public async  Task EditAsync(Category DbCategory, CategoryEditVM request)
+        public async Task EditAsync(Category dbCategory, CategoryEditVM request)
         {
-            DbCategory.Name = request.Name;
+            dbCategory.Name = request.Name;
             await _context.SaveChangesAsync();
         }
 
@@ -56,7 +56,7 @@ namespace MVC_MiniApp.Services
 
         public async Task<Category> GetByIdAsync(int id)
         {
-           return await _context.Categories.FirstAsync();
+           return await _context.Categories.FirstOrDefaultAsync(m=>m.Id == id);
         }
     }
 }

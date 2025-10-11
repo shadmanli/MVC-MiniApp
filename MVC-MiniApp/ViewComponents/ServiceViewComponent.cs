@@ -16,19 +16,19 @@ namespace MVC_MiniApp.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            IEnumerable<WorkVM> works = await _workService.GetAllAsync();
+            IEnumerable<WorkUIVM> works = await _workService.GetAllUIAsync();
             IEnumerable<CategoryUIVM> categories = await _categoryService.GetAllUIAsync();
 
 
-            return await Task.FromResult(View(new ProductVCVM
+            return await Task.FromResult(View(new WorkVCVM
             {
                 Works = works,
                 Categories = categories
             }));
         }
-        public class ProductVCVM
+        public class WorkVCVM
         {
-            public IEnumerable<WorkVM> Works { get; set; }
+            public IEnumerable<WorkUIVM> Works { get; set; }
             public IEnumerable<CategoryUIVM> Categories { get; set; }
         }
     }

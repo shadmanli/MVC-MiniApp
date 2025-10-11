@@ -11,10 +11,29 @@ namespace MVC_MiniApp.Services
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
+
         public AboutService(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
             _env = env;
+        }
+
+        public async Task<AboutVM> GetAboutAsync()
+        {
+            var about = await _context.Abouts.FirstOrDefaultAsync();
+            if (about == null) return null;
+
+            return new AboutVM
+            {
+                Id = about.Id,
+                Description = about.Description,
+                Image = about.Image
+            };
+        }
+
+        public async Task<About> GetByIdAsync(int id)
+        {
+            return await _context.Abouts.FindAsync(id);
         }
 
         public async Task CreateAsync(AboutCreateVM request)
@@ -34,7 +53,6 @@ namespace MVC_MiniApp.Services
 
             var about = new About
             {
-               
                 Description = request.Description,
                 Image = fileName
             };
@@ -43,26 +61,18 @@ namespace MVC_MiniApp.Services
             await _context.SaveChangesAsync();
         }
 
-
-        public async Task DeleteAsync(About about)
-        {
-            if (!string.IsNullOrEmpty(about.Image))
-            {
-                var file = Path.Combine(_env.WebRootPath, "img", about.Image);
-                if (File.Exists(file)) File.Delete(file);
-            }
-
-            _context.Abouts.Remove(about);
-            await _context.SaveChangesAsync();
-        }
-
         public async Task EditAsync(About dbAbout, AboutEditVM request)
         {
             if (request.UploadImage != null)
             {
-                string oldFilePath = Path.Combine(_env.WebRootPath, "img", dbAbout.Image ?? "");
-                if (File.Exists(oldFilePath)) File.Delete(oldFilePath);
+                // köhnə şəkli sil
+                if (!string.IsNullOrEmpty(dbAbout.Image))
+                {
+                    string oldFilePath = Path.Combine(_env.WebRootPath, "img", dbAbout.Image);
+                    if (File.Exists(oldFilePath)) File.Delete(oldFilePath);
+                }
 
+                // yeni şəkli yüklə
                 string fileName = Guid.NewGuid().ToString() + "-" + request.UploadImage.FileName;
                 string newFilePath = Path.Combine(_env.WebRootPath, "img", fileName);
 
@@ -74,27 +84,22 @@ namespace MVC_MiniApp.Services
                 dbAbout.Image = fileName;
             }
 
-           
             dbAbout.Description = request.Description;
-
             _context.Abouts.Update(dbAbout);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<AboutVM>> GetAllAsync()
+        public async Task DeleteAsync(About about)
         {
-           return await _context.Abouts.Select(c=>new AboutVM
+            if (!string.IsNullOrEmpty(about.Image))
             {
-                Id = c.Id,
-                Description = c.Description,
-                Image = c.Image,
-            }).ToListAsync();
-        }
-        
+                var file = Path.Combine(_env.WebRootPath, "img", about.Image);
+                if (File.Exists(file))
+                    File.Delete(file);
+            }
 
-        public async  Task<About> GetByIdAsync(int id)
-        {
-            return  await _context.Abouts.FindAsync(id);
+            _context.Abouts.Remove(about);
+            await _context.SaveChangesAsync();
         }
     }
 }

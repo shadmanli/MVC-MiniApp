@@ -1,33 +1,39 @@
-﻿@model IEnumerable<AboutVM>
-<div class="container mt-5">
+﻿@model AboutVM
+
+<div class="container center-container">
     <h2 class="mt-5">About</h2>
-    <a asp-action="Create" class="btn btn-secondary">Create</a>
-    <table class="table table-striped table-bordered table-hover mt-4">
-        <thead class="table-dark">
-            <tr>
-                <th>Image</th>
-                <th>Description</th>
 
-                <th>Operations</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td><img src="~/img/@item.Image" style="width:150px;height:150px" /></td>
-                    <td>@item.Description</td>
-                    <td>
-                        <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-dark">Detail</a>
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-                        <button data-id="@item.Id" class="btn btn-danger delete-expert-btn">Delete</button>
-                    </td>
-                </tr>
+    @if (Model == null)
+    {
+        <a asp-action="Create" class="btn btn-success">Create</a>
+        <p class="mt-3 text-muted">Hal-hazırda heç bir məlumat yoxdur.</p>
+    }
+    else
+    {
+        <div class="mb-3">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+            <button data-id="@Model.Id" class="btn btn-danger delete-about-btn">Delete</button>
+        </div>
 
-            }
-        </tbody>
-    </table>
+        <div id="about-table">
+            <table class="table table-striped table-bordered table-hover mt-4">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Image</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="~/img/@Model.Image" style="width:150px;height:150px;object-fit:cover;" />
+                        </td>
+                        <td>@Model.Description</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    }
 </div>
-
 
 

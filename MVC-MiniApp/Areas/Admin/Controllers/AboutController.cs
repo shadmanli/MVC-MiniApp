@@ -14,33 +14,25 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             _aboutService = aboutService;
         }
 
-    
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var abouts = await _aboutService.GetAllAsync();
-            return View(abouts);
+            var about = await _aboutService.GetAboutAsync();
+            return View(about);
         }
 
-    
         [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
+        public IActionResult Create() => View();
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(AboutCreateVM request)
         {
-            if (!ModelState.IsValid)
-                return View(request);
-
+            if (!ModelState.IsValid) return View(request);
             await _aboutService.CreateAsync(request);
             return RedirectToAction(nameof(Index));
         }
 
-   
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -51,9 +43,8 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             {
                 Id = about.Id,
                 Description = about.Description,
-                ExistImage=about.Image,
+                ExistImage = about.Image
             };
-
             return View(vm);
         }
 
@@ -71,27 +62,16 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Route("/Admin/About/Delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var about = await _aboutService.GetByIdAsync(id);
             if (about == null) return NotFound();
 
             await _aboutService.DeleteAsync(about);
-            return Ok();
+
+            return Ok(); // fetch üçün uyğundur
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Detail(int id)
-        {
-            var about = await _aboutService.GetByIdAsync(id);
-            if (about == null) return NotFound();
-
-            return View(new AboutVM
-            {
-                Id = about.Id,
-                Description = about.Description,
-                Image = about.Image
-            });
-        }
     }
 }

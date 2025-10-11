@@ -59,31 +59,6 @@ namespace MVC_MiniApp.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("MVC_MiniApp.Models.Recent", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Recents");
-                });
-
             modelBuilder.Entity("MVC_MiniApp.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -120,6 +95,31 @@ namespace MVC_MiniApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SliderInfos");
+                });
+
+            modelBuilder.Entity("MVC_MiniApp.Models.Team", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Teams");
                 });
 
             modelBuilder.Entity("MVC_MiniApp.Models.Work", b =>

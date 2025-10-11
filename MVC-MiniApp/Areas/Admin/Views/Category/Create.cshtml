@@ -1,8 +1,8 @@
 ﻿@model CategoryCreateVM
 
-<div class="container mt-5">
+<div class="container center-container">
     <form method="post" asp-action="Create" class="form-sample mt-5">
-        <div class="mb-3">
+        <div class="mb-5">
             <label asp-for="Name" class="form-label"></label>
             <input asp-for="Name" class="form-control" maxlength="none" />
             <span class="text-danger" asp-validation-for="Name"></span>
