@@ -1,0 +1,32 @@
+﻿
+@model TeamCreateVM
+
+
+
+<div class="container  center-container">
+    <form method="post" asp-action="Create" enctype="multipart/form-data" class="form-sample mt-5">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Position" class="form-label"></label>
+            <input asp-for="Position" class="form-control" />
+            <span class="text-danger" asp-validation-for="Position"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="UploadImage" class="form-label"></label>
+            <input asp-for="UploadImage"  class="form-control" />
+            <span class="text-danger" asp-validation-for="UploadImage"></span>
+        </div>
+      
+
+
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a asp-action="Index" class="btn btn-warning">Cancel</a>
+    </form>
+</div>
+

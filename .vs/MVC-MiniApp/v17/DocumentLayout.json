@@ -3,12 +3,84 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\services\\workservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\services\\workservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\services\\teamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\services\\teamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\services\\interfaces\\iteamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\services\\interfaces\\iteamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\services\\interfaces\\icategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\areas\\admin\\views\\team\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\areas\\admin\\views\\team\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\areas\\admin\\views\\team\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\areas\\admin\\views\\team\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\viewmodels\\team\\teamvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\viewmodels\\team\\teamvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\areas\\admin\\views\\about\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\areas\\admin\\views\\about\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\areas\\admin\\controllers\\teamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\areas\\admin\\controllers\\teamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\areas\\admin\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\areas\\admin\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\areas\\admin\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\services\\aboutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\services\\aboutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\services\\interfaces\\iaboutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\services\\interfaces\\iaboutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\services\\interfaces\\iworkservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\services\\interfaces\\iworkservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\services\\interfaces\\isliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\services\\interfaces\\isliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\services\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\services\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\views\\shared\\components\\ourwork\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\views\\shared\\components\\ourwork\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|c:\\users\\asus\\desktop\\mvc-miniapp\\mvc-miniapp\\viewcomponents\\ourworkviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F73E69F1-8ADB-42A5-82FB-DC7FEC04B618}|MVC-MiniApp\\MVC-MiniApp.csproj|solutionrelative:mvc-miniapp\\viewcomponents\\ourworkviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,19 +90,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\CategoryService.cs",
-              "RelativeDocumentMoniker": "MVC-MiniApp\\Services\\CategoryService.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\CategoryService.cs",
-              "RelativeToolTip": "MVC-MiniApp\\Services\\CategoryService.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Views\\Team\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Areas\\Admin\\Views\\Team\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Views\\Team\\Index.cshtml",
+              "RelativeToolTip": "MVC-MiniApp\\Areas\\Admin\\Views\\Team\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-11T16:56:50.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Views\\About\\Detail.cshtml",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Areas\\Admin\\Views\\About\\Detail.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Views\\About\\Detail.cshtml",
+              "RelativeToolTip": "MVC-MiniApp\\Areas\\Admin\\Views\\About\\Detail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-11T16:55:56.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Views\\Team\\Detail.cshtml",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Areas\\Admin\\Views\\Team\\Detail.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Views\\Team\\Detail.cshtml",
+              "RelativeToolTip": "MVC-MiniApp\\Areas\\Admin\\Views\\Team\\Detail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-11T16:55:30.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Areas\\Admin\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowDgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-11T12:50:56.865Z",
+              "WhenOpened": "2025-10-11T16:50:32.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TeamController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Controllers\\TeamController.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Areas\\Admin\\Controllers\\TeamController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Controllers\\TeamController.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Areas\\Admin\\Controllers\\TeamController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAkwDAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:49:55.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AboutController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:49:51.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:49:42.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AboutController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Controllers\\AboutController.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Controllers\\AboutController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Controllers\\AboutController.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Controllers\\AboutController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:49:39.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AboutService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\AboutService.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Services\\AboutService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\AboutService.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Services\\AboutService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:47:39.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TeamVM.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\ViewModels\\Team\\TeamVM.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\ViewModels\\Team\\TeamVM.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\ViewModels\\Team\\TeamVM.cs",
+              "RelativeToolTip": "MVC-MiniApp\\ViewModels\\Team\\TeamVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:40:06.467Z",
               "EditorCaption": ""
             },
             {
@@ -47,15 +236,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "MVC-MiniApp\\Areas\\Admin\\Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Areas\\Admin\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "MVC-MiniApp\\Areas\\Admin\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAA/wEoAAAA3AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Services\\Interfaces\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Services\\Interfaces\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-11T12:50:36.593Z",
+              "WhenOpened": "2025-10-11T16:41:10.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TeamService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\TeamService.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Services\\TeamService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\TeamService.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Services\\TeamService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwDoAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:38:50.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SliderService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\SliderService.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Services\\SliderService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\SliderService.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Services\\SliderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:38:48.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ISliderService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\Interfaces\\ISliderService.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Services\\Interfaces\\ISliderService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\Interfaces\\ISliderService.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Services\\Interfaces\\ISliderService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:38:30.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IAboutService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\Interfaces\\IAboutService.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Services\\Interfaces\\IAboutService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\Interfaces\\IAboutService.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Services\\Interfaces\\IAboutService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:38:04.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IWorkService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\Interfaces\\IWorkService.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Services\\Interfaces\\IWorkService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\Interfaces\\IWorkService.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Services\\Interfaces\\IWorkService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:37:51.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ITeamService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\Interfaces\\ITeamService.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Services\\Interfaces\\ITeamService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\Interfaces\\ITeamService.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Services\\Interfaces\\ITeamService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T16:37:43.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WorkService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\WorkService.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Services\\WorkService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Services\\WorkService.cs",
+              "RelativeToolTip": "MVC-MiniApp\\Services\\WorkService.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T15:30:20.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Views\\Shared\\Components\\OurWork\\Default.cshtml",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\Views\\Shared\\Components\\OurWork\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\Views\\Shared\\Components\\OurWork\\Default.cshtml",
+              "RelativeToolTip": "MVC-MiniApp\\Views\\Shared\\Components\\OurWork\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-11T15:30:02.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OurWorkViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\ViewComponents\\OurWorkViewComponent.cs",
+              "RelativeDocumentMoniker": "MVC-MiniApp\\ViewComponents\\OurWorkViewComponent.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\MVC-MiniApp\\MVC-MiniApp\\ViewComponents\\OurWorkViewComponent.cs",
+              "RelativeToolTip": "MVC-MiniApp\\ViewComponents\\OurWorkViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T15:14:35.472Z",
               "EditorCaption": ""
             }
           ]

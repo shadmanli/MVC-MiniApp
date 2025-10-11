@@ -1089,7 +1089,6 @@ wwwroot\img\69601016-e130-41f2-be66-1d9c2c514a9e_h3-team-img-1.png
 wwwroot\img\7153bf25-3094-4e51-8c62-4e2836dd42e5_h3-team-img-1.png
 wwwroot\img\84b358c7-a22c-4d84-a2d3-3e8e00f16361_Image 2.jpg
 wwwroot\img\93533be7-5048-4d47-b892-025c4f14f8a3_h3-team-img-1.png
-wwwroot\img\9647e442-0b24-4b47-b7c5-6d729e1bdc67_Image 1.jpg
 wwwroot\img\96e8c573-33df-475f-a049-ab2495b12ec7_h3-team-img-1.png
 wwwroot\img\9c5c9f2a-c534-4b56-9b87-bd44c1f35af5_h3-slider-background.jpg
 wwwroot\img\b2cc021b-5127-4873-bc0c-ebb7c1165a79_h3-slider-background.jpg
@@ -1165,3 +1164,6 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\img\9647e442-0b24-4b47-b7c5-6d729e1bdc67_Image 1.jpg
+wwwroot\img\de7c173e-cb13-4743-ba4a-3bd30a4598fb-Image 7.jpg
+wwwroot\img\105d22b5-135e-46be-8a5d-cb4e535f4984-Image 3.jpg

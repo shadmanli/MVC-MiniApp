@@ -180,5 +180,11 @@ namespace MVC_MiniApp.Services
                 MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image
             }).OrderByDescending(m=>m.Id).Take(6);
         }
+
+        public async Task<WorkVM> GetFirstWorkAsync()
+        {
+            var work = await _context.Works.FirstOrDefaultAsync();
+            return new WorkVM { Name = work.Name, Description = work.Description };
+        }
     }
 }

@@ -6,7 +6,6 @@ namespace MVC_MiniApp.ViewComponents
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {
-
             return await Task.FromResult(View());
         }
     }
