@@ -1,0 +1,32 @@
+﻿@model ContactCreateVM
+
+
+
+
+<div class="container  center-container">
+    <form method="post" asp-action="Create" enctype="multipart/form-data" class="form-sample mt-5">
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span class="text-danger" asp-validation-for="Title"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span class="text-danger" asp-validation-for="Description"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="UploadImage" class="form-label"></label>
+            <input asp-for="UploadImage"  class="form-control" />
+            <span class="text-danger" asp-validation-for="UploadImage"></span>
+        </div>
+      
+
+
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a asp-action="Index" class="btn btn-warning">Cancel</a>
+    </form>
+</div>
+

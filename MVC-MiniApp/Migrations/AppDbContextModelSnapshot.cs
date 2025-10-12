@@ -59,6 +59,31 @@ namespace MVC_MiniApp.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("MVC_MiniApp.Models.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("MVC_MiniApp.Models.Partner", b =>
                 {
                     b.Property<int>("Id")

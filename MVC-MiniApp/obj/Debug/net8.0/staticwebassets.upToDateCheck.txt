@@ -1085,6 +1085,7 @@ wwwroot\img\5d1f0359-4276-41be-bccf-44d69ab1c979_Image 1.jpg
 wwwroot\img\652ad6ad-5f7c-40ee-b527-040f69f09c55_h3-team-img-1.png
 wwwroot\img\69601016-e130-41f2-be66-1d9c2c514a9e_h3-team-img-1.png
 wwwroot\img\7153bf25-3094-4e51-8c62-4e2836dd42e5_h3-team-img-1.png
+wwwroot\img\7a27dee4-1a91-4230-960d-cb6473629b81-Image 1.jpg
 wwwroot\img\93533be7-5048-4d47-b892-025c4f14f8a3_h3-team-img-1.png
 wwwroot\img\9647e442-0b24-4b47-b7c5-6d729e1bdc67_Image 1.jpg
 wwwroot\img\96e8c573-33df-475f-a049-ab2495b12ec7_h3-team-img-1.png

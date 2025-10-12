@@ -17,6 +17,7 @@ builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<ITeamService, TeamService>();
 builder.Services.AddScoped<IPartnerService, PartnerService>();
 builder.Services.AddScoped<ISliderInfoService, SliderInfoService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 
 var app = builder.Build();

@@ -1,0 +1,39 @@
+﻿@model ContactEditVM
+
+
+<div class="container mt-5" style="max-width:500px;">
+    <h3>Contact Edit</h3>
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="ExistImage" />
+
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.ExistImage))
+        {
+            <div class="mb-3">
+                <label>Current Image:</label><br />
+                <img src="~/img/@Model.ExistImage" style="width:150px;height:150px;object-fit:cover;" />
+            </div>
+        }
+
+        <div class="mb-3">
+            <label asp-for="UploadImage" class="form-label">Upload New Image</label>
+            <input asp-for="UploadImage" type="file" accept="image/*" class="form-control" />
+            <span asp-validation-for="UploadImage" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

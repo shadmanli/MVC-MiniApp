@@ -2,6 +2,6 @@
 {
     public class PartnerCreateVM
     {
-        public string Image {  get; set; }
+        public string Image { get; set; }
     }
 }

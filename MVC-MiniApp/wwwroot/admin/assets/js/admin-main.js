@@ -80,3 +80,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let deleteTeamBtns = document.querySelectorAll(".delete-contact-btn");
+
+    deleteTeamBtns.forEach(btn => {
+        btn.addEventListener("click", function () {
+            let id = parseInt(this.getAttribute("data-id"));
+
+            fetch(`/Admin/Contact/Delete/${id}`, {
+                method: "POST"
+            })
+                .then(response => {
+                    if (response.ok) {
+                        btn.parentNode.parentNode.remove();
+                    } else {
+                        alert("Silinmə uğursuz oldu.");
+                    }
+                })
+                .catch(err => console.error(err));
+        });
+    });
+});
