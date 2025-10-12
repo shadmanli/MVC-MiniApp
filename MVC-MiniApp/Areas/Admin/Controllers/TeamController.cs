@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MVC_MiniApp.Services.Interfaces;
 using MVC_MiniApp.ViewModels.Team;
 using System.Collections;
@@ -6,9 +7,11 @@ using System.Collections;
 namespace MVC_MiniApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class TeamController:Controller
+    public class TeamController : Controller
     {
-      private readonly ITeamService _teamService;
+        private readonly ITeamService _teamService;
+        private readonly IWebHostEnvironment _env;
+
         public TeamController(ITeamService teamService)
         {
             _teamService = teamService;
@@ -21,6 +24,16 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             return View(result);
         }
 
+      
+        [HttpGet]
+        public async Task<IActionResult> Detail(int id)
+        {
+            var team = await _teamService.GetByIdAsync(id);
+            if (team == null) return NotFound();
+            return View(team);
+        }
+
+        
         [HttpGet]
         public IActionResult Create()
         {
@@ -31,31 +44,48 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(TeamCreateVM request)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(request);
-            }
+            if (!ModelState.IsValid) return View(request);
+
             await _teamService.CreateAsync(request);
             return RedirectToAction(nameof(Index));
-
         }
 
         [HttpGet]
-        public async Task<IActionResult> Detail(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            var team= await _teamService.GetByIdAsync(id);
-            if(team == null) return NotFound();
-            return View(new TeamVM
-            {
-                Name= team.Name,
-                Image= team.Image,
-                Position=team.Position,
+            var team = await _teamService.GetByIdAsync(id);
+            if (team == null) return NotFound();
 
-            });
+            var model = new TeamEditVM
+            {
+                Id = team.Id,
+                Name = team.Name,
+                Position = team.Position,
+                ExistImage = team.Image
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(TeamEditVM request)
+        {
+            if (!ModelState.IsValid) return View(request);
+
+            await _teamService.EditAsync(request);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _teamService.DeleteAsync(id);
+            return Ok();
         }
 
 
-    }
 
+    }
 }
 

@@ -1070,7 +1070,6 @@ wwwroot\favicon.ico
 wwwroot\img\05a23541-c19e-4e53-ab4d-16eec38f78dd_Image 1.jpg
 wwwroot\img\088f00d0-2b44-42ce-a405-b641dc8dd295_Image 2.jpg
 wwwroot\img\0c01dad0-19b5-4cb5-b3ab-7ff97edfc9b4_h3-team-img-1.png
-wwwroot\img\0ece9342-bcfa-41a6-b9b0-9a16fa5ee4a9_Image 5.jpg
 wwwroot\img\17673348-5122-44ff-84ff-2f2c7edd225d_Image 2.jpg
 wwwroot\img\2193a753-16b3-4c67-b9ff-ace03f40c698_h3-team-img-1.png
 wwwroot\img\23d5593b-7f37-4522-9287-8e4bb1404f4d_Image 2.jpg
@@ -1081,21 +1080,23 @@ wwwroot\img\4e5abcc3-8038-43e9-a747-77464cff7d98_h3-team-img-1.png
 wwwroot\img\54809765-b5f0-4843-b87b-5f59222c37cb_Image 1.jpg
 wwwroot\img\57914b18-6fed-4900-bfcf-b65386e5f60d_h3-team-img-1.png
 wwwroot\img\5abdc756-5ead-48ee-9291-ee593d842310_Image 1.jpg
-wwwroot\img\5c3ea6e3-a6c1-4e9f-807d-f52c20e986ed-Image 1.jpg
 wwwroot\img\5cc6e4d7-cb3e-4118-ac21-d072dd475c0c-Image 8.jpg
 wwwroot\img\5d1f0359-4276-41be-bccf-44d69ab1c979_Image 1.jpg
 wwwroot\img\652ad6ad-5f7c-40ee-b527-040f69f09c55_h3-team-img-1.png
 wwwroot\img\69601016-e130-41f2-be66-1d9c2c514a9e_h3-team-img-1.png
 wwwroot\img\7153bf25-3094-4e51-8c62-4e2836dd42e5_h3-team-img-1.png
-wwwroot\img\84b358c7-a22c-4d84-a2d3-3e8e00f16361_Image 2.jpg
 wwwroot\img\93533be7-5048-4d47-b892-025c4f14f8a3_h3-team-img-1.png
+wwwroot\img\9647e442-0b24-4b47-b7c5-6d729e1bdc67_Image 1.jpg
 wwwroot\img\96e8c573-33df-475f-a049-ab2495b12ec7_h3-team-img-1.png
 wwwroot\img\9c5c9f2a-c534-4b56-9b87-bd44c1f35af5_h3-slider-background.jpg
+wwwroot\img\a737ab48-746b-4482-9502-07afb8ea49f6-Image 8.jpg
 wwwroot\img\b2cc021b-5127-4873-bc0c-ebb7c1165a79_h3-slider-background.jpg
 wwwroot\img\bc322f0b-1d8c-4dcc-8832-2c7fbecf0a93_Image 1.jpg
 wwwroot\img\c04c9cf4-b616-4834-bcef-fae58724b8d1_Image 2.jpg
 wwwroot\img\cbc7b806-d647-45a7-b0c7-f4632c401d07_h3-team-img-1.png
 wwwroot\img\cc1ba31c-8838-48fd-9c6b-187f8a691627_Image 2.jpg
+wwwroot\img\cffa1203-c40e-4f60-9670-90d6a7a4d573_Image 7.jpg
+wwwroot\img\df553e5f-3dbb-4d04-b99e-c803e4e81dc3_Image 8.jpg
 wwwroot\img\e58ce933-a217-4422-9219-d8a15749de52_Image 2.jpg
 wwwroot\img\e8f207ab-329e-4081-ba85-3968124006b9_Image 1.jpg
 wwwroot\img\ed5e7ae2-74a1-4bcc-96fb-85671959a294_Image 1.jpg
@@ -1105,7 +1106,6 @@ wwwroot\img\f25ff6d8-f622-4734-b676-825f95fabbff_h3-team-img-1.png
 wwwroot\img\f3750db3-cde6-47a6-9dab-f530a35d517c_Image 2.jpg
 wwwroot\img\f6b473e9-5d43-4699-9027-970973c49170_Image 2.jpg
 wwwroot\img\f7600a7e-0899-4591-92cb-9fba2a5880a3_Image 1.jpg
-wwwroot\img\f89bdd17-3c37-49c6-9e95-74fd9b2f57be_Image 1.jpg
 wwwroot\img\fcd27967-5d53-4dc3-b5cc-7b784a4167cc_h3-slider-background.jpg
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -1164,6 +1164,3 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\img\9647e442-0b24-4b47-b7c5-6d729e1bdc67_Image 1.jpg
-wwwroot\img\de7c173e-cb13-4743-ba4a-3bd30a4598fb-Image 7.jpg
-wwwroot\img\105d22b5-135e-46be-8a5d-cb4e535f4984-Image 3.jpg

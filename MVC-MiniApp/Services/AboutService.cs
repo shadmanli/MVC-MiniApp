@@ -101,5 +101,6 @@ namespace MVC_MiniApp.Services
             _context.Abouts.Remove(about);
             await _context.SaveChangesAsync();
         }
+
     }
 }

@@ -4,30 +4,28 @@ using MVC_MiniApp.Services.Interfaces;
 
 namespace MVC_MiniApp.ViewComponents
 {
-    public class SliderViewComponent:ViewComponent
+    using global::MVC_MiniApp.Services;
+    using global::MVC_MiniApp.ViewModels.Slider;
+    using global::MVC_MiniApp.ViewModels.Team;
+    using Microsoft.AspNetCore.Mvc;
+   
+
+    namespace MVC_MiniApp.ViewComponents
     {
-        private readonly ISliderService _sliderService;
-        public SliderViewComponent(ISliderService sliderService)
+        public class SliderViewComponent : ViewComponent
         {
-            _sliderService = sliderService;
-        }
-        public async Task<IViewComponentResult> InvokeAsync()
-        {
-            IEnumerable<SliderInfo> SliderInfos = await _sliderService.GetAllAsync();
-            Slider Sliders = await _sliderService.GetSliderAsync();
-
-            SliderVCVM result = new()
+            private readonly  ISliderInfoService _sliderInfoService;
+            public SliderViewComponent(ISliderInfoService sliderInfoService)
             {
-                SliderInfos = SliderInfos,
-                Slider = Sliders
-            };
+                _sliderInfoService = sliderInfoService;
+            }
+            public async Task<IViewComponentResult> InvokeAsync()
+            {
 
-            return await Task.FromResult(View(result));
-        }
-        public class SliderVCVM
-        {
-            public Slider Slider { get; set; }
-            public IEnumerable<SliderInfo> SliderInfos { get; set; }
+                IEnumerable<SliderInfoUIVM> infos = await _sliderInfoService.GetAllUIAsync();
+                return await Task.FromResult(View(infos));
+            }
         }
     }
+
 }

@@ -1,0 +1,23 @@
+﻿@model PartnerEditVM
+<div class="container center-container">
+    <h3>Edit Partner</h3>
+
+    <form method="post" asp-action="Edit">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label asp-for="Image" class="form-label">Icon Class</label>
+            <input asp-for="Image" id="iconInput" class="form-control" placeholder="Məs: bx bxs-buildings" />
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+
+        <div class="mt-3 text-center">
+            <label>Preview:</label>
+            <div id="iconPreview" style="font-size:50px;">
+                <i class="@Model?.Image" style="color:blue;"></i>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Update</button>
+    </form>
+</div>

@@ -10,11 +10,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<ISliderInfoService, SliderInfoService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IWorkService, WorkService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<IPartnerService, PartnerService>();
+builder.Services.AddScoped<ISliderInfoService, SliderInfoService>();
 
 
 var app = builder.Build();

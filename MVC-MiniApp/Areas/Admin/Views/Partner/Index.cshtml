@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PartnerVM>
+
+<div class="container center-container">
+    <h2 class="mt-5">Partner</h2>
+    <a asp-action="Create" class="btn btn-secondary">Create</a>
+    <table class="table table-striped table-bordered table-hover mt-4">
+        <thead class="table-dark">
+            <tr>
+                <th>Icon</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+             
+                    <td>
+                        <i class="display-1 text-white @item.Image"></i>
+                    </td>
+
+                    <td>
+                        <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-dark">Detail</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                        <button data-id="@item.Id" class="btn btn-danger delete-team-btn">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

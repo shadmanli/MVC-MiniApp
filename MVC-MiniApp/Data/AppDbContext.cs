@@ -12,6 +12,7 @@ namespace MVC_MiniApp.Data
         public DbSet<WorkImage> workImages { get; set; }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Partner> Partners { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     }
 }

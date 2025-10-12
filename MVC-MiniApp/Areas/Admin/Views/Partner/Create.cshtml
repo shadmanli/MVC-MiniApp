@@ -1,0 +1,19 @@
+﻿@model PartnerCreateVM
+
+<div class="container center-container">
+    <form method="post" asp-action="Create">
+        <div class="mb-3">
+            <label asp-for="Image" class="form-label">Icon Class</label>
+            <input asp-for="Image" class="form-control" placeholder="Məs: bx bxs-buildings, bx bxs-car, bx bxs-plane" />
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+
+
+
+
+
+

@@ -62,7 +62,6 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [Route("/Admin/About/Delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var about = await _aboutService.GetByIdAsync(id);
@@ -70,8 +69,9 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
             await _aboutService.DeleteAsync(about);
 
-            return Ok(); // fetch üçün uyğundur
+            return Ok();
         }
+
 
     }
 }

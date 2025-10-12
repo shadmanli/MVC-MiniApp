@@ -1,0 +1,29 @@
+﻿@model SliderInfoEditVM
+
+
+
+<div class="container mt-5" style="max-width: 500px; margin:auto;">
+    <div class="card shadow p-4" style="border-radius: 15px;">
+        <h3 class="text-center mb-4">Edit Slider</h3>
+
+        <form method="post" asp-action="Edit">
+           
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
