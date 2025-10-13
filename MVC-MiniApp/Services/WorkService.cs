@@ -186,5 +186,22 @@ namespace MVC_MiniApp.Services
             var work = await _context.Works.FirstOrDefaultAsync();
             return new WorkVM { Name = work.Name, Description = work.Description };
         }
+
+        public async Task<IEnumerable<OurWorkUIVM>> GetAllUIWorkAsync()
+        {
+            var works = await _context.Works
+             .Include(w => w.Category)
+             .Include(w => w.Images)
+             .ToListAsync();
+
+            return works.Select(w => new OurWorkUIVM
+            {
+                Id = w.Id,
+                Name = w.Name,
+                Description = w.Description,
+                CategoryName = w.Category.Name,
+                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image
+            });
+        }
     }
 }

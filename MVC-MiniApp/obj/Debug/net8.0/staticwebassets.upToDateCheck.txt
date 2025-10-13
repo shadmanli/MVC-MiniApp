@@ -1075,6 +1075,7 @@ wwwroot\img\2193a753-16b3-4c67-b9ff-ace03f40c698_h3-team-img-1.png
 wwwroot\img\23d5593b-7f37-4522-9287-8e4bb1404f4d_Image 2.jpg
 wwwroot\img\2a8c686f-3b7f-4366-a419-cee05e9758bc_h3-team-img-1.png
 wwwroot\img\3241c927-a92a-4a28-b83e-97d66c30052d-h3-slider-background.jpg
+wwwroot\img\430a9d26-93fd-4203-9a45-c8cb8aec994f_WhatsApp Image 2025-09-07 at 02.33.27.jpeg
 wwwroot\img\438c0aa0-e745-40d7-ac98-74d36c215d5e_Image 2.jpg
 wwwroot\img\4e5abcc3-8038-43e9-a747-77464cff7d98_h3-team-img-1.png
 wwwroot\img\54809765-b5f0-4843-b87b-5f59222c37cb_Image 1.jpg

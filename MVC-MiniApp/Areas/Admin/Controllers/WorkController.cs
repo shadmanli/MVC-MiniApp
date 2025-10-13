@@ -131,5 +131,6 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
                     Text = c.Name
                 }).ToList();
         }
+
     }
 }

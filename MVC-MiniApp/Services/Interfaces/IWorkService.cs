@@ -7,12 +7,14 @@ namespace MVC_MiniApp.Services.Interfaces
     {
         Task<IEnumerable<WorkVM>> GetAllAsync();
         Task<IEnumerable<WorkUIVM>> GetAllUIAsync();
-        Task<Work> GetByIdAsync(int id); // return vm olmalidir
+        Task<Work> GetByIdAsync(int id); 
         Task CreateAsync(WorkCreateVM request);
-        Task DeleteAsync(Work work);  // parametr id gelmelidir
+        Task DeleteAsync(Work work); 
         Task EditAsync(Work DbWork, WorkEditVM request);
         Task<IEnumerable<WorkUIVM>> GetAllRecentWorksUIAsync();
         Task<WorkVM> GetFirstWorkAsync();
+        Task<IEnumerable<OurWorkUIVM>> GetAllUIWorkAsync();
+
 
     }
 }
