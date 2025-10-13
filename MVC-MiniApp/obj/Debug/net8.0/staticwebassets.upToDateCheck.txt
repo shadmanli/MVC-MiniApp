@@ -500,6 +500,7 @@ wwwroot\assets\css\bootstrap.css
 wwwroot\assets\css\bootstrap.min.css
 wwwroot\assets\css\boxicon.min.css
 wwwroot\assets\css\custom.css
+wwwroot\assets\css\Login.css
 wwwroot\assets\css\style.css
 wwwroot\assets\css\templatemo.css
 wwwroot\assets\fonts\boxicons.eot
@@ -514,6 +515,7 @@ wwwroot\assets\img\banner-bg-02.jpg
 wwwroot\assets\img\banner-bg-03.jpg
 wwwroot\assets\img\banner-img-01.svg
 wwwroot\assets\img\banner-img-02.svg
+wwwroot\assets\img\bmw.jpg
 wwwroot\assets\img\card.jpg
 wwwroot\assets\img\favicon.ico
 wwwroot\assets\img\favicon.png
@@ -592,6 +594,7 @@ wwwroot\assets\js\custom.js
 wwwroot\assets\js\fslightbox.js
 wwwroot\assets\js\isotope.pkgd.js
 wwwroot\assets\js\jquery.min.js
+wwwroot\assets\js\Login.js
 wwwroot\assets\js\main.js
 wwwroot\assets\js\templatemo.js
 wwwroot\assets\js\templatemo.min.js

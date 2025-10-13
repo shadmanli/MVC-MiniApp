@@ -54,33 +54,41 @@ namespace MVC_MiniApp.Controllers
         {
             return View();
         }
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginVM request)
         {
             if (!ModelState.IsValid)
-            {
                 return View(request);
-            }
+
             AppUser user = await _userManager.FindByEmailAsync(request.EmailOrUsername);
+
             if (user == null)
-            {
-                user = await _userManager.FindByEmailAsync(request.EmailOrUsername);
-            }
+                user = await _userManager.FindByNameAsync(request.EmailOrUsername);
+
             if (user == null)
             {
                 ModelState.AddModelError("", "Email or Password is incorrect");
-            }
-            var result = await _signInManager.PasswordSignInAsync(user, request.Password, false, false);
-            if (!result.Succeeded)
-            {
-                ModelState.AddModelError("", "Email Or Password is incorrect");
                 return View(request);
             }
+
+            var result = await _signInManager.PasswordSignInAsync(user, request.Password, false, false);
+
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Email or Password is incorrect");
+                return View(request);
+            }
+
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

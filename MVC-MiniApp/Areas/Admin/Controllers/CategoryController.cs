@@ -36,12 +36,15 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var category= await _categoryService.GetByIdAsync(id);
-            await _categoryService.DeleteAsync(category);
-            return Ok();
+            var category = await _categoryService.GetByIdAsync(id);
+            if (category == null)
+                return NotFound();
 
+            await _categoryService.DeleteAsync(category);
+            return Ok(); 
         }
 
         [HttpGet]
