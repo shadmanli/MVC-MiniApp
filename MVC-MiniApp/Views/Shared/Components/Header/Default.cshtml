@@ -11,9 +11,15 @@
         <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
             <div class="flex-fill mx-xl-5 mb-2">
                 <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
+                 
                     <li class="nav-item">
-                        <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Home</a>
+                        <a class="nav-link btn-outline-primary rounded-pill px-3"
+                           asp-controller="Home"
+                           asp-action="Index">Home</a>
                     </li>
+
+
+
                     <li class="nav-item">
                         <a class="nav-link btn-outline-primary rounded-pill px-3"
                            asp-controller="About"
@@ -34,6 +40,36 @@
                            asp-controller="Contact"
                            asp-action="Index">Contact</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle btn-outline-primary rounded-pill px-3"
+                           href="#"
+                           id="accountDropdown"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Account
+                        </a>
+
+                        <ul class="dropdown-menu text-center" aria-labelledby="accountDropdown">
+                            <li>
+                                <a class="dropdown-item"
+                                   asp-controller="Account"
+                                   asp-action="Register">Register</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   asp-controller="Account"
+                                   asp-action="Login">Login</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item text-danger"
+                                   asp-controller="Account"
+                                   asp-action="Logout">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
             <div class="navbar align-self-center d-flex">

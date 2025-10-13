@@ -1,0 +1,86 @@
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using MVC_MiniApp.Models;
+using MVC_MiniApp.ViewModels;
+using MVC_MiniApp.ViewModels.Register;
+
+namespace MVC_MiniApp.Controllers
+{
+    public class AccountController : Controller
+    {
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+        }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterVM request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(request);
+            }
+            AppUser user = new()
+            {
+                FullName = request.FullName,
+                Email = request.Email,
+                UserName = request.Username,
+            };
+            var result = await _userManager.CreateAsync(user, request.Password);
+            if (!result.Succeeded)
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
+                return View(request);
+            }
+
+            return RedirectToAction("Index", "Home");
+
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginVM request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(request);
+            }
+            AppUser user = await _userManager.FindByEmailAsync(request.EmailOrUsername);
+            if (user == null)
+            {
+                user = await _userManager.FindByEmailAsync(request.EmailOrUsername);
+            }
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Email or Password is incorrect");
+            }
+            var result = await _signInManager.PasswordSignInAsync(user, request.Password, false, false);
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Email Or Password is incorrect");
+                return View(request);
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+    }
+}

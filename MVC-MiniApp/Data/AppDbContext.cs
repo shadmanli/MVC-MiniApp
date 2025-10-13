@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MVC_MiniApp.Models;
 
 namespace MVC_MiniApp.Data
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:IdentityDbContext<AppUser>
     {
       public DbSet<Slider> Sliders {  get; set; }
      public   DbSet<SliderInfo> SliderInfos { get; set; }
