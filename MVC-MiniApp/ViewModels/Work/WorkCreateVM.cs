@@ -12,7 +12,6 @@ namespace MVC_MiniApp.ViewModels.Work
 
         [Required(ErrorMessage = "Name is required")]
         [MaxLength(100, ErrorMessage = "Name cannot exceed 100 characters")]
-        [RegularExpression("^[A-Za-zƏəÖöÜüĞğİıÇçŞş]+$", ErrorMessage = "Name can only contain letters")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "At least one image is required")]

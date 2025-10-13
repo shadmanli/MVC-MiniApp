@@ -9,7 +9,7 @@ namespace MVC_MiniApp.ViewModels.Slider
         public string Title { get; set; }
 
         [Required(ErrorMessage = "Description is required")]
-        [MaxLength(500, ErrorMessage = "Description cannot exceed 500 characters")]
+        
         public string Description { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace MVC_MiniApp.ViewModels.About
 {
-    public class AboutEditVM : IValidatableObject
+    public class AboutEditVM 
     {
         public string? ExistImage { get; set; }
 
@@ -15,15 +15,5 @@ namespace MVC_MiniApp.ViewModels.About
 
         public int Id { get; set; }
 
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            if (string.IsNullOrEmpty(ExistImage) && UploadImage == null)
-            {
-                yield return new ValidationResult(
-                    "You must upload an image",
-                    new[] { nameof(UploadImage) }
-                );
-            }
-        }
     }
 }

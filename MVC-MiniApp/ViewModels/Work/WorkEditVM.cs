@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MVC_MiniApp.ViewModels.Work
 {
-    public class WorkEditVM : IValidatableObject
+    public class WorkEditVM 
     {
         public int Id { get; set; }
 
@@ -14,7 +14,7 @@ namespace MVC_MiniApp.ViewModels.Work
 
         [Required(ErrorMessage = "Name is required")]
         [MaxLength(100, ErrorMessage = "Name cannot exceed 100 characters")]
-        [RegularExpression("^[A-Za-zƏəÖöÜüĞğİıÇçŞş]+$", ErrorMessage = "Name can only contain letters")]
+
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Category is required")]
@@ -24,18 +24,6 @@ namespace MVC_MiniApp.ViewModels.Work
 
         public List<IFormFile>? NewImages { get; set; }
 
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            bool hasExisting = ExistingImages != null && ExistingImages.Count > 0;
-            bool hasNew = NewImages != null && NewImages.Count > 0;
-
-            if (!hasExisting && !hasNew)
-            {
-                yield return new ValidationResult(
-                    "At least one image is required",
-                    new[] { nameof(NewImages) }
-                );
-            }
-        }
+    
     }
 }
