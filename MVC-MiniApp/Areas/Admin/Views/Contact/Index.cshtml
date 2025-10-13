@@ -16,14 +16,25 @@
             <p class="mt-2 text-muted text-center">@Model.Description</p>
 
             <div class="text-center mt-3">
-                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
-                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger delete-contact-btn">Delete</a>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                {
+                    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger delete-contact-btn">Delete</a>
+
+                }
             </div>
         </div>
     }
     else
     {
         <div class="alert alert-warning mt-4">No contact information found.</div>
-        <a asp-action="Create" class="btn btn-secondary">Create</a>
+        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+        {
+            <a asp-action="Create" class="btn btn-secondary">Create</a>
+        }
+       
     }
 </div>

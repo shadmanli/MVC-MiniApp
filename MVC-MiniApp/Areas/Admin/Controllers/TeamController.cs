@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVC_MiniApp.Services.Interfaces;
 using MVC_MiniApp.ViewModels.Team;
@@ -18,6 +19,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var result = await _teamService.GetAllAsync();
@@ -26,6 +28,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
       
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var team = await _teamService.GetByIdAsync(id);
@@ -35,6 +38,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
         
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
@@ -42,6 +46,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(TeamCreateVM request)
         {
             if (!ModelState.IsValid) return View(request);
@@ -51,6 +56,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var team = await _teamService.GetByIdAsync(id);
@@ -69,6 +75,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(TeamEditVM request)
         {
             if (!ModelState.IsValid) return View(request);
@@ -78,6 +85,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _teamService.DeleteAsync(id);

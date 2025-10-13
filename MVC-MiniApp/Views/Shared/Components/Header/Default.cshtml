@@ -32,14 +32,20 @@
                            asp-action="Index">Work</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="Admin" asp-controller="DashBoard" asp-action="Index">Admin</a>
-                    </li>
-
-                    <li class="nav-item">
                         <a class="nav-link btn-outline-primary rounded-pill px-3"
                            asp-controller="Contact"
                            asp-action="Index">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                        {
+                                                 <a class="nav-link" asp-area="Admin" asp-controller="DashBoard" asp-action="Index">Admin</a>
+
+
+                        }
+                    </li>
+
+                 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn-outline-primary rounded-pill px-3"
                            href="#"

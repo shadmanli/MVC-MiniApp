@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVC_MiniApp.Services.Interfaces;
 using MVC_MiniApp.ViewModels.Partner;
@@ -13,11 +14,15 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         {
             _partnerService = partnerService;
         }
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task< IActionResult> Index()
         {
             var result= await _partnerService.GetAllAsync();
             return View(result);
         }
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var result= await _partnerService.GetByIdAsync(id);
@@ -26,12 +31,14 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> CreateAsync(PartnerCreateVM request)
         {
             if (!ModelState.IsValid) return View(request);
@@ -40,6 +47,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
         }
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
             await _partnerService.DeleteAsync(id);  
@@ -48,6 +56,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var partner = await _partnerService.GetByIdAsync(id);
@@ -67,6 +76,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
       
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(PartnerEditVM request)
         {
             if (!ModelState.IsValid)
@@ -76,14 +86,6 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
-
-
-
-
-
-
-
 
 
     }

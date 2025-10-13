@@ -5,15 +5,25 @@
 
     @if (Model == null)
     {
-        <a asp-action="Create" class="btn btn-success">Create</a>
+        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+        {
+            <a asp-action="Create" class="btn btn-success">Create</a>
+
+        }
         <p class="mt-3 text-muted">Hal-hazırda heç bir məlumat yoxdur.</p>
     }
     else
     {
         <div class="mb-3">
-            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+            {
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
 
-            <button data-id="@Model.Id" class="btn btn-danger delete-about-btn">Delete</button>
+            }
+            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+            {
+                <button data-id="@Model.Id" class="btn btn-danger delete-about-btn">Delete</button>
+            }
         </div>
 
         <div id="about-table">

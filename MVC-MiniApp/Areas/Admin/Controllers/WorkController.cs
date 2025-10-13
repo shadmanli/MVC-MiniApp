@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MVC_MiniApp.Services.Interfaces;
 using MVC_MiniApp.ViewModels.Work;
@@ -18,6 +19,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var works = await _workService.GetAllAsync();
@@ -25,6 +27,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             await SetCategoriesAsync();
@@ -33,6 +36,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(WorkCreateVM request)
         {
             if (!ModelState.IsValid)
@@ -55,6 +59,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var dbWork = await _workService.GetByIdAsync(id);
@@ -79,6 +84,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(WorkEditVM request)
         {
             var dbWork = await _workService.GetByIdAsync(request.Id);
@@ -105,6 +111,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Admin/Work/Delete/{id}")]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             var work = await _workService.GetByIdAsync(id);
@@ -117,6 +124,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var dbWork = await _workService.GetByIdAsync(id);

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MVC_MiniApp.Services.Interfaces;
 using MVC_MiniApp.ViewModels.Slider;
 
@@ -14,6 +15,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             _sliderService = sliderService;
         }
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var slider = await _sliderService.GetSliderAsync();
@@ -21,12 +23,14 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(SliderCreateVM request)
         {
             if (ModelState.IsValid)
@@ -37,6 +41,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             return View(request);
         }
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var result = await _sliderService.GetByIdAsync(id);
@@ -44,6 +49,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             return View(result);
         }
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var slider = await _sliderService.GetByIdAsync(id);
@@ -62,6 +68,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(SliderEditVM request)
         {
             if (!ModelState.IsValid) return View(request);
@@ -70,6 +77,8 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _sliderService.DeleteAsync(id);

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MVC_MiniApp.Services.Interfaces;
 using MVC_MiniApp.ViewModels.About;
 
@@ -15,6 +16,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var about = await _aboutService.GetAboutAsync();
@@ -22,10 +24,12 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create() => View();
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(AboutCreateVM request)
         {
             if (!ModelState.IsValid) return View(request);
@@ -34,6 +38,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var about = await _aboutService.GetByIdAsync(id);
@@ -50,6 +55,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id, AboutEditVM request)
         {
             if (!ModelState.IsValid) return View(request);
@@ -62,6 +68,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             var about = await _aboutService.GetByIdAsync(id);

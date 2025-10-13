@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MVC_MiniApp.Services;
 using MVC_MiniApp.Services.Interfaces;
 using MVC_MiniApp.ViewModels.Contact;
@@ -17,21 +18,22 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var desk = await _contactService.GetContactAsync();
             return View(desk);
         }
 
-
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var contact = await _contactService.GetByIdAsync(id);
             if (contact == null) return NotFound();
             return View(contact);
         }
-
-     
+        [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
@@ -39,6 +41,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
      
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(ContactCreateVM request)
         {
             if (!ModelState.IsValid) return View(request);
@@ -48,6 +51,8 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
       
+        [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var contact = await _contactService.GetByIdAsync(id);
@@ -65,7 +70,9 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
      
+
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(ContactEditVM request)
         {
             if (!ModelState.IsValid) return View(request);
@@ -74,7 +81,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _contactService.DeleteAsync(id);

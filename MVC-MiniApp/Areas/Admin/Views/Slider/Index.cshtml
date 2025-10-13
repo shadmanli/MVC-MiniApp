@@ -5,7 +5,12 @@
 
     @if (Model == null)
     {
-        <a asp-action="Create" class="btn btn-secondary">Create</a>
+        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+        {
+            <a asp-action="Create" class="btn btn-secondary">Create</a>
+
+
+        }
     }
 
  
@@ -14,10 +19,18 @@
         <div class="mt-4">
             <img src="@(Url.Content("~/uploads/sliders/" + Model.Image))" alt="Slider Image" width="400" />
             <div class="mt-2">
-                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
-                <form asp-action="Delete" asp-route-id="@Model.Id" method="post" style="display:inline">
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+
+                }
+                @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                {
+                    <form asp-action="Delete" asp-route-id="@Model.Id" method="post" style="display:inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                }
+              
             </div>
         </div>
     }
