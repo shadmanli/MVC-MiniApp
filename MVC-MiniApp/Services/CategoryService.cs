@@ -58,5 +58,19 @@ namespace MVC_MiniApp.Services
         {
            return await _context.Categories.FirstOrDefaultAsync(m=>m.Id == id);
         }
+        public async Task<bool> ExistsByNameAsync(string name, int? excludeId = null)
+        {
+            if (excludeId.HasValue)
+            {
+                return await _context.Categories
+                    .AnyAsync(c => c.Name == name && c.Id != excludeId.Value);
+            }
+            else
+            {
+                return await _context.Categories
+                    .AnyAsync(c => c.Name == name);
+            }
+        }
+
     }
 }

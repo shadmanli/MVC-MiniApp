@@ -203,5 +203,19 @@ namespace MVC_MiniApp.Services
                 MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image
             });
         }
+        public async Task<bool> ExistsByNameAsync(string name, int? excludeId = null)
+        {
+            if (excludeId.HasValue)
+            {
+                return await _context.Works
+                    .AnyAsync(w => w.Name == name && w.Id != excludeId.Value);
+            }
+            else
+            {
+                return await _context.Works
+                    .AnyAsync(w => w.Name == name);
+            }
+        }
+
     }
 }

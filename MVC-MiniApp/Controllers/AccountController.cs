@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MVC_MiniApp.Helpers.Enums;
 using MVC_MiniApp.Models;
 using MVC_MiniApp.ViewModels;
 using MVC_MiniApp.ViewModels.Register;
@@ -10,10 +11,12 @@ namespace MVC_MiniApp.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        private readonly RoleManager<IdentityRole> _roleManager;
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
         [HttpGet]
         public IActionResult Register()
@@ -90,5 +93,15 @@ namespace MVC_MiniApp.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+
+        //[HttpGet]
+        //public async Task<IActionResult> CreateRoles()
+        //{
+        //    foreach(var item in Enum.GetValues(typeof(Roles)))
+        //}
+        
     }
+       
+
 }

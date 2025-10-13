@@ -41,9 +41,18 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
                 return View(request);
             }
 
+            bool exists = await _workService.ExistsByNameAsync(request.Name);
+            if (exists)
+            {
+                ModelState.AddModelError("Name", "Work with this name already exists");
+                await SetCategoriesAsync();
+                return View(request);
+            }
+
             await _workService.CreateAsync(request);
             return RedirectToAction(nameof(Index));
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
@@ -77,6 +86,14 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
             if (!ModelState.IsValid)
             {
+                await SetCategoriesAsync();
+                return View(request);
+            }
+
+            bool exists = await _workService.ExistsByNameAsync(request.Name, request.Id);
+            if (exists)
+            {
+                ModelState.AddModelError("Name", "Work with this name already exists");
                 await SetCategoriesAsync();
                 return View(request);
             }

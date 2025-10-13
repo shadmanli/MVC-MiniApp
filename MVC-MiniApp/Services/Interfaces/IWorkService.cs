@@ -14,6 +14,8 @@ namespace MVC_MiniApp.Services.Interfaces
         Task<IEnumerable<WorkUIVM>> GetAllRecentWorksUIAsync();
         Task<WorkVM> GetFirstWorkAsync();
         Task<IEnumerable<OurWorkUIVM>> GetAllUIWorkAsync();
+        Task<bool> ExistsByNameAsync(string name, int? excludeId = null);
+
 
 
     }

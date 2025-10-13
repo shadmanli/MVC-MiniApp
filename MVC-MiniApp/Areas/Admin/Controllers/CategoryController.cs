@@ -31,8 +31,14 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
                 return View(request);
             }
 
-            await _categoryService.CreateAsync(request);
+            bool exists = await _categoryService.ExistsByNameAsync(request.Name);
+            if (exists)
+            {
+                ModelState.AddModelError("Name", "Category with this name already exists");
+                return View(request);
+            }
 
+            await _categoryService.CreateAsync(request);
             return RedirectToAction(nameof(Index));
         }
         [HttpPost]
@@ -73,10 +79,19 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(request);
             }
+
             var category = await _categoryService.GetByIdAsync(id);
             if (category == null) return NotFound();
+
+            bool exists = await _categoryService.ExistsByNameAsync(request.Name, id);
+            if (exists)
+            {
+                ModelState.AddModelError("Name", "Category with this name already exists");
+                return View(request);
+            }
+
             await _categoryService.EditAsync(category, request);
             return RedirectToAction(nameof(Index));
         }

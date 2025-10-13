@@ -8,10 +8,12 @@ namespace MVC_MiniApp.Services.Interfaces
     {
         Task<IEnumerable<CategoryUIVM>> GetAllUIAsync();
         Task<IEnumerable<CategoryVM>> GetAllAsync();
-        Task<Category> GetByIdAsync(int id); // return type category yox vm olacaq
+        Task<Category> GetByIdAsync(int id); 
         Task CreateAsync(CategoryCreateVM request);
-        Task DeleteAsync(Category category); //parametr olaraq id gelmelidir
+        Task DeleteAsync(Category category); 
         Task EditAsync(Category DbCategory, CategoryEditVM request);
+        Task<bool> ExistsByNameAsync(string name, int? excludeId = null);
+
 
     }
 }

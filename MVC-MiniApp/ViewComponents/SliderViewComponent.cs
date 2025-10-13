@@ -1,31 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MVC_MiniApp.Models;
 using MVC_MiniApp.Services.Interfaces;
+using MVC_MiniApp.ViewModels.Slider;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace MVC_MiniApp.ViewComponents
 {
-    using global::MVC_MiniApp.Services;
-    using global::MVC_MiniApp.ViewModels.Slider;
-    using global::MVC_MiniApp.ViewModels.Team;
-    using Microsoft.AspNetCore.Mvc;
-   
-
-    namespace MVC_MiniApp.ViewComponents
+    public class SliderViewComponent : ViewComponent
     {
-        public class SliderViewComponent : ViewComponent
-        {
-            private readonly  ISliderInfoService _sliderInfoService;
-            public SliderViewComponent(ISliderInfoService sliderInfoService)
-            {
-                _sliderInfoService = sliderInfoService;
-            }
-            public async Task<IViewComponentResult> InvokeAsync()
-            {
+        private readonly ISliderService _sliderService;
+        private readonly ISliderInfoService _sliderInfoService;
 
-                IEnumerable<SliderInfoUIVM> infos = await _sliderInfoService.GetAllUIAsync();
-                return await Task.FromResult(View(infos));
-            }
+        public SliderViewComponent(ISliderService sliderService, ISliderInfoService sliderInfoService)
+        {
+            _sliderService = sliderService;
+            _sliderInfoService = sliderInfoService;
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            // Tək şəkil
+            var slider = await _sliderService.GetSliderAsync();
+
+            // Bütün infos
+            var infos = await _sliderInfoService.GetAllUIAsync();
+
+            var model = new SliderUIVM
+            {
+                Image = slider.Image,
+                Infos = infos.ToList() // bütün infos carousel üçün
+            };
+
+            return View(model);
         }
     }
-
 }
