@@ -16,7 +16,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin,SuperAdmin")]
+        //[Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var about = await _aboutService.GetAboutAsync();
@@ -24,7 +24,7 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "SuperAdmin")]
+        //[Authorize(Roles = "SuperAdmin")]
         public IActionResult Create() => View();
 
         [HttpPost]

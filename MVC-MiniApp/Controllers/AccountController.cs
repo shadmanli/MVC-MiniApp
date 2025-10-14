@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using MVC_MiniApp.Helpers.Enums;
 using MVC_MiniApp.Models;
 using MVC_MiniApp.ViewModels;
 using MVC_MiniApp.ViewModels.Register;
-using Org.BouncyCastle.Bcpg;
 
 public class AccountController : Controller
 {
@@ -57,12 +55,10 @@ public class AccountController : Controller
             }
             return View(request);
         }
-        await _userManager.AddToRoleAsync(user, Roles.Member.ToString());
+        await _userManager.AddToRoleAsync(user, Roles.SuperAdmin.ToString());
         await _signInManager.SignInAsync(user, false);
-        var token = await _userManager.CreateAsync(user, request.Password);
-        var link=Url.Action(nameof(ConfirmEmail)),"Account",new UserId { UserId=user.Id ,token},Request.Scheme,Request.Host.ToString():
 
-        return RedirectToAction(nameof(VerifyEmail));
+        return View(nameof(Login));
     }
 
     [HttpGet]
@@ -102,15 +98,8 @@ public class AccountController : Controller
 
 
 
-        return RedirectToAction(nameof(VerifyEmail));
+        return RedirectToAction("Index", "Home");
     }
-
-    [HttpGet]
-    public IActionResult VerifyEmail()
-    {
-        return View();
-    }
-
 
     [HttpPost]
     [ValidateAntiForgeryToken]
@@ -121,18 +110,16 @@ public class AccountController : Controller
     }
 
 
-    //[HttpGet]
-    //public async Task<ActionResult> CreateRoles()
-    //{
-    //    foreach (var role in Enum.GetValues(typeof(Roles)))
-    //    {
-    //        if (!await _roleManager.RoleExistsAsync(role.ToString()))
-    //        {
-    //            await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
-    //        }
-    //    }
-    //    return Ok();
-    //}
-
-
+    [HttpGet]
+    public async Task<ActionResult> CreateRoles()
+    {
+        foreach (var role in Enum.GetValues(typeof(Roles)))
+        {
+            if (!await _roleManager.RoleExistsAsync(role.ToString()))
+            {
+                await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+            }
+        }
+        return Ok();
+    }
 }

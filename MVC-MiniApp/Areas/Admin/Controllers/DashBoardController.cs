@@ -5,6 +5,8 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = "Admin,SuperAdmin")]
+
+
     public class DashBoardController : Controller
     {  
         public IActionResult Index()

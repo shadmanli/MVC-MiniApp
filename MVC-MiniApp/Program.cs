@@ -12,7 +12,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 
 
-builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
 builder.Services.AddRazorPages();
 
@@ -44,6 +44,7 @@ builder.Services.AddScoped<IPartnerService, PartnerService>();
 builder.Services.AddScoped<ISliderInfoService, SliderInfoService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<ISettingService, SettingService>();
 
 
 var app = builder.Build();
