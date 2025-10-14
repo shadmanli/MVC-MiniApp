@@ -19,6 +19,9 @@ namespace MVC_MiniApp.ViewModels.Work
 
         [Required(ErrorMessage = "Category is required")]
         public int CategoryId { get; set; }
+        [Required(ErrorMessage = "Price is required")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Price must be a positive number")]
+        public decimal Price { get; set; }
 
         public List<WorkImageVM>? ExistingImages { get; set; }
 

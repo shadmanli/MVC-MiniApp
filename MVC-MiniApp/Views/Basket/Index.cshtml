@@ -1,0 +1,101 @@
+﻿@using MVC_MiniApp.ViewModels
+@model List<BasketProductVM>
+
+<h2 class="mb-4 text-center">Your Basket</h2>
+
+@if (Model.Count == 0)
+{
+    <div class="text-center my-5">
+        <i class="bx bx-cart bx-lg mb-3" style="font-size: 4rem; color: #6c757d;"></i>
+        <h4 class="text-secondary">Your basket is empty</h4>
+        <p class="text-muted">Add some delicious items to your basket to see them here.</p>
+        <a href="/" class="btn btn-primary mt-3">Go Shopping</a>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Count</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="row-@item.WorkId">
+                        <td>@item.Name</td>
+                        <td>@item.Price.ToString("0.00") $</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-secondary minus-btn" data-id="@item.WorkId">−</button>
+                            <span class="mx-2">@item.Count</span>
+                            <button class="btn btn-sm btn-outline-secondary plus-btn" data-id="@item.WorkId">+</button>
+                        </td>
+                        <td>@(item.Price* item.Count).ToString("0.00") $</td>
+                        <td>
+                            <button class="btn btn-danger remove-btn" data-id="@item.WorkId">Remove</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot class="table-light">
+                <tr>
+                    <td colspan="3"><b>Total:</b></td>
+                    <td colspan="2"><b>@ViewBag.TotalPrice?.ToString("0.00") $</b></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        function getCookie(name) {
+            let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? decodeURIComponent(match[2]) : null;
+        }
+
+        function setCookie(name, value) {
+            document.cookie = name + '=' + encodeURIComponent(value) + '; path=/';
+        }
+
+        function updateBasket(workId, change) {
+            let basket = JSON.parse(getCookie('basket') || '[]');
+            let item = basket.find(x => x.WorkId == workId);
+            if (item) {
+                item.Count += change;
+                if (item.Count <= 0) {
+                    basket = basket.filter(x => x.WorkId != workId);
+                }
+            }
+            setCookie('basket', JSON.stringify(basket));
+            location.reload();
+        }
+
+        $('.plus-btn').click(function () {
+            let id = parseInt($(this).data('id'));
+            updateBasket(id, 1);
+        });
+
+        $('.minus-btn').click(function () {
+            let id = parseInt($(this).data('id'));
+            updateBasket(id, -1);
+        });
+
+        $('.remove-btn').click(function () {
+            let id = parseInt($(this).data('id'));
+            let basket = JSON.parse(getCookie('basket') || '[]');
+            basket = basket.filter(x => x.WorkId != id);
+            setCookie('basket', JSON.stringify(basket));
+            location.reload();
+        });
+
+    });
+</script>

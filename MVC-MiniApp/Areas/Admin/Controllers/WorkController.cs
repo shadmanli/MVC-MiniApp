@@ -57,7 +57,6 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
         [HttpGet]
         [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
@@ -68,9 +67,10 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             var vm = new WorkEditVM
             {
                 Id = dbWork.Id,
-                Description = dbWork.Description,
                 Name = dbWork.Name,
+                Description = dbWork.Description,
                 CategoryId = dbWork.CategoryId,
+                Price = dbWork.Price, 
                 ExistingImages = dbWork.Images.Select(i => new WorkImageVM
                 {
                     Image = i.Image,
@@ -118,10 +118,8 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
             if (work == null) return NotFound();
 
             await _workService.DeleteAsync(work);
-
             return Ok();
         }
-
 
         [HttpGet]
         [Authorize(Roles = "Admin,SuperAdmin")]
@@ -132,9 +130,10 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
 
             var vm = new WorkDetailVM
             {
-                Description = dbWork.Description,
                 Name = dbWork.Name,
+                Description = dbWork.Description,
                 CategoryName = dbWork.Category?.Name,
+                Price = dbWork.Price,
                 Images = dbWork.Images.Select(i => new WorkImageVM
                 {
                     Image = i.Image,
@@ -156,6 +155,5 @@ namespace MVC_MiniApp.Areas.Admin.Controllers
                     Text = c.Name
                 }).ToList();
         }
-
     }
 }

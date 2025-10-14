@@ -2,8 +2,8 @@
 {
     public class BasketVM
     {
-        public int ProductId { get; set; }
-        public int ProductCount { get; set; }
+        public int WorkId { get; set; }
+        public int Count { get; set; }
 
     }
 }

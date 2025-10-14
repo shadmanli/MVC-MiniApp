@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<WorkVM>
 
-<div class="container  center-container">
+<div class="container center-container">
     <h2 class="mt-5">Work</h2>
+
     @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
     {
         <a asp-action="Create" class="btn btn-secondary">Create</a>
@@ -17,6 +18,7 @@
                 <th>Image</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Price (₼)</th> 
                 <th>Category</th>
                 <th>Operations</th>
             </tr>
@@ -28,9 +30,10 @@
                     <td><img src="~/img/@item.MainImage" style="width:150px;height:150px" /></td>
                     <td>@item.Name</td>
                     <td>@item.Description</td>
+                    <td>@item.Price.ToString("0.00") $</td>
                     <td class="text-success">@item.CategoryName</td>
                     <td>
-                        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin")|| User.IsInRole("Admin"))
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Admin")))
                         {
                             <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-dark">Detail</a>
                         }
@@ -38,12 +41,7 @@
                         @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
                         {
                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
-
-                        }
-                        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
-                        {
                             <button data-id="@item.Id" class="btn btn-danger delete-work-btn">Delete</button>
-
                         }
                     </td>
                 </tr>
@@ -52,31 +50,30 @@
     </table>
 </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const token = document.querySelector('#anti-forgery-form input[name="__RequestVerificationToken"]').value;
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const token = document.querySelector('#anti-forgery-form input[name="__RequestVerificationToken"]').value;
 
-            document.querySelectorAll(".delete-work-btn").forEach(btn => {
-                btn.addEventListener("click", async () => {
-                    const id = btn.getAttribute("data-id");
+        document.querySelectorAll(".delete-work-btn").forEach(btn => {
+            btn.addEventListener("click", async () => {
+                const id = btn.getAttribute("data-id");
 
-                    try {
-                        const response = await fetch(`/Admin/Work/Delete/${id}`, {
-                            method: "POST",
-                            headers: {
-                                "RequestVerificationToken": token
-                            }
-                        });
-
-                        if (response.ok) {
-                            const row = document.getElementById(`row-${id}`);
-                            if(row) row.remove(); 
+                try {
+                    const response = await fetch(`/Admin/Work/Delete/${id}`, {
+                        method: "POST",
+                        headers: {
+                            "RequestVerificationToken": token
                         }
-                    } catch (error) {
-                        console.error(error);
+                    });
+
+                    if (response.ok) {
+                        const row = document.getElementById(`row-${id}`);
+                        if(row) row.remove();
                     }
-                });
+                } catch (error) {
+                    console.error(error);
+                }
             });
         });
-    </script>
-
+    });
+</script>

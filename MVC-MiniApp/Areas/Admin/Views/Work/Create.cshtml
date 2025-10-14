@@ -1,5 +1,5 @@
 ﻿@model WorkCreateVM
-<div class="container  center-container">
+<div class="container center-container">
     <form method="post" asp-action="Create" enctype="multipart/form-data" class="form-sample mt-5">
 
         <div class="mb-3">
@@ -7,13 +7,18 @@
             <input asp-for="Name" class="form-control" />
             <span class="text-danger" asp-validation-for="Name"></span>
         </div>
+
         <div class="mb-3">
-            <label asp-for="Description" class="form-label">Descrition:</label>
+            <label asp-for="Description" class="form-label">Description:</label>
             <input asp-for="Description" class="form-control" />
             <span class="text-danger" asp-validation-for="Description"></span>
         </div>
 
-       
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label">Price:</label>
+            <input asp-for="Price" class="form-control" />
+            <span class="text-danger" asp-validation-for="Price"></span>
+        </div>
 
         <div class="mb-3">
             <label asp-for="CategoryId" class="form-label">Kateqoriya:</label>

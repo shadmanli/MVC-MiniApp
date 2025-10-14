@@ -30,10 +30,10 @@ namespace MVC_MiniApp.Services
                 Name = w.Name,
                 Description = w.Description,
                 CategoryName = w.Category.Name,
-                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image
+                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image,
+                Price = w.Price
             });
         }
-
 
         public async Task<Work> GetByIdAsync(int id)
         {
@@ -74,9 +74,10 @@ namespace MVC_MiniApp.Services
 
             var work = new Work
             {
-                Name= request.Name,
+                Name = request.Name,
                 Description = request.Description,
                 CategoryId = request.CategoryId,
+                Price = request.Price,
                 Images = images
             };
 
@@ -84,12 +85,12 @@ namespace MVC_MiniApp.Services
             await _context.SaveChangesAsync();
         }
 
-
         public async Task EditAsync(Work dbWork, WorkEditVM request)
         {
             dbWork.Name = request.Name;
             dbWork.Description = request.Description;
             dbWork.CategoryId = request.CategoryId;
+            dbWork.Price = request.Price;
 
             string folderPath = Path.Combine(_env.WebRootPath, "img");
             if (!Directory.Exists(folderPath))
@@ -132,8 +133,6 @@ namespace MVC_MiniApp.Services
             await _context.SaveChangesAsync();
         }
 
-
-
         public async Task DeleteAsync(Work work)
         {
             foreach (var image in work.Images)
@@ -160,7 +159,8 @@ namespace MVC_MiniApp.Services
                 CategoryId = w.CategoryId,
                 Description = w.Description,
                 CategoryName = w.Category.Name,
-                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image
+                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image,
+                Price = w.Price
             });
         }
 
@@ -177,14 +177,22 @@ namespace MVC_MiniApp.Services
                 CategoryId = w.CategoryId,
                 Description = w.Description,
                 CategoryName = w.Category.Name,
-                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image
-            }).OrderByDescending(m=>m.Id).Take(6);
+                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image,
+                Price = w.Price
+            }).OrderByDescending(m => m.Id).Take(6);
         }
 
         public async Task<WorkVM> GetFirstWorkAsync()
         {
             var work = await _context.Works.FirstOrDefaultAsync();
-            return new WorkVM { Name = work.Name, Description = work.Description };
+            if (work == null) return null;
+
+            return new WorkVM
+            {
+                Name = work.Name,
+                Description = work.Description,
+                Price = work.Price
+            };
         }
 
         public async Task<IEnumerable<OurWorkUIVM>> GetAllUIWorkAsync()
@@ -200,9 +208,11 @@ namespace MVC_MiniApp.Services
                 Name = w.Name,
                 Description = w.Description,
                 CategoryName = w.Category.Name,
-                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image
+                MainImage = w.Images.FirstOrDefault(i => i.IsMain)?.Image,
+                Price = w.Price
             });
         }
+
         public async Task<bool> ExistsByNameAsync(string name, int? excludeId = null)
         {
             if (excludeId.HasValue)
@@ -216,6 +226,5 @@ namespace MVC_MiniApp.Services
                     .AnyAsync(w => w.Name == name);
             }
         }
-
     }
 }

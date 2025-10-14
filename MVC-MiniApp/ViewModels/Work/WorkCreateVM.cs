@@ -14,6 +14,10 @@ namespace MVC_MiniApp.ViewModels.Work
         [MaxLength(100, ErrorMessage = "Name cannot exceed 100 characters")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Price is required")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Price must be a positive number")]
+        public decimal Price { get; set; }
+
         [Required(ErrorMessage = "At least one image is required")]
         public List<IFormFile> Images { get; set; }
 

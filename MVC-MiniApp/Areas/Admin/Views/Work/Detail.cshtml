@@ -1,12 +1,12 @@
 ﻿@model WorkDetailVM
 
-<div class="container  center-container">
+<div class="container center-container">
     <h1 class="text-center">Product Detail</h1>
 
     <div class="product-item detail mt-4">
-
         <h4>Name : @Model.Name</h4>
-        <h4> Description : @Model.Description</h4>
+        <h4>Description : @Model.Description</h4>
+        <h4>Price : @Model.Price ₼</h4> 
         <h4>Category : @Model.CategoryName</h4>
 
         <div class="Image mt-3">
@@ -21,4 +21,3 @@
 
     <a asp-action="Index" class="btn btn-secondary mt-3">Back to Index</a>
 </div>
-
