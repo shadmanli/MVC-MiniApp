@@ -65,14 +65,13 @@ namespace MVC_MiniApp.Services
         {
             if (request.UploadImage != null)
             {
-                // köhnə şəkli sil
+               
                 if (!string.IsNullOrEmpty(dbAbout.Image))
                 {
                     string oldFilePath = Path.Combine(_env.WebRootPath, "img", dbAbout.Image);
                     if (File.Exists(oldFilePath)) File.Delete(oldFilePath);
                 }
 
-                // yeni şəkli yüklə
                 string fileName = Guid.NewGuid().ToString() + "-" + request.UploadImage.FileName;
                 string newFilePath = Path.Combine(_env.WebRootPath, "img", fileName);
 
